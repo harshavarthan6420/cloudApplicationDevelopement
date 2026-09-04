@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background-color: #1b1c20;
+  color: #efeff2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #a855f7;
+  color: #ffffff;
+}
+
+/* Home page: plain React elements styled with basic CSS */
+.home {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 8px;
+}
+
+.home-title {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #c084fc;
+}
+
+.home-subtitle {
+  margin: 8px 0 0;
+  color: #a3a6ad;
+  font-size: 1.05rem;
+}
+
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.home-link {
+  display: block;
+  padding: 16px;
+  background: #232529;
+  border: 1px solid #36393f;
+  border-radius: 6px;
+  color: #efeff2;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.home-link:hover {
+  border-color: #a855f7;
+}
+
+.home-link span {
+  display: block;
+  margin-top: 6px;
+  color: #a3a6ad;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.home-note {
+  margin-top: 28px;
+  color: #a3a6ad;
+  font-size: 0.9rem;
+}
+
+.home-note a {
+  color: #c084fc;
+}
