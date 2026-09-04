@@ -8,11 +8,14 @@ def create_app(config_object=Config):
     app.config.from_object(config_object)
 
     frontend_url = (app.config.get("FRONTEND_URL") or "").strip()
+    origins = [
+        r"https://.*\.onrender\.com",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
     if frontend_url and frontend_url != "*":
         base_origin = frontend_url.rstrip("/")
-        origins = [base_origin, f"{base_origin}/", "http://localhost:5173", "http://127.0.0.1:5173"]
-    else:
-        origins = "*"
+        origins.extend([base_origin, f"{base_origin}/"])
 
     CORS(
         app,
