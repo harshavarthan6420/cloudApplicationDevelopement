@@ -2,6 +2,7 @@ services:
   - type: web
     name: gamevault-backend
     env: python
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
@@ -20,6 +21,7 @@ services:
   - type: web
     name: gamevault-frontend
     env: static
+    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
