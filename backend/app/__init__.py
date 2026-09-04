@@ -7,7 +7,19 @@ def create_app(config_object=Config):
     app = Flask(__name__)
     app.config.from_object(config_object)
 
-    CORS(app, resources={r"/*": {"origins": app.config["FRONTEND_URL"]}}, supports_credentials=True)
+    frontend_url = (app.config.get("FRONTEND_URL") or "").strip()
+    if frontend_url and frontend_url != "*":
+        base_origin = frontend_url.rstrip("/")
+        origins = [base_origin, f"{base_origin}/", "http://localhost:5173", "http://127.0.0.1:5173"]
+    else:
+        origins = "*"
+
+    CORS(
+        app,
+        resources={r"/*": {"origins": origins}},
+        allow_headers=["Content-Type", "X-Username", "Authorization"],
+        supports_credentials=True,
+    )
 
     from app.routes.health import health_bp
     from app.routes.auth import auth_bp
