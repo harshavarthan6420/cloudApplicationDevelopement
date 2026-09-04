@@ -4,11 +4,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import certifi
+
 MONGO_URI = os.getenv("MONGO_URI", "")
 MONGO_DB = os.getenv("MONGO_DB", "gamevault")
 
 if MONGO_URI:
-    client = MongoClient(MONGO_URI)
+    try:
+        client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+    except Exception:
+        client = MongoClient(MONGO_URI)
     db = client[MONGO_DB]
 else:
     client = None

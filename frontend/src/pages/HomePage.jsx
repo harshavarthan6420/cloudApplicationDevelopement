@@ -34,9 +34,9 @@ function HomePage() {
       </nav>
 
       <p className="home-note">
-        Everything is open to browse. You will only be asked to{' '}
-        <Link to="/login">log in</Link> or <Link to="/register">register</Link> when you open
-        the wishlist.
+        Sign in to manage your collection. Please{' '}
+        <Link to="/login">log in</Link> or <Link to="/register">register</Link> to access
+        your library, wishlist, reviews, and dashboard.
       </p>
     </div>
   );

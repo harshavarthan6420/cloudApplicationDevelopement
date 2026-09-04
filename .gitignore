@@ -1,0 +1,23 @@
+# Environment files (contains secrets)
+.env
+*.env
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Node
+node_modules/
+dist/
+build/
+.cypress-cache/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
