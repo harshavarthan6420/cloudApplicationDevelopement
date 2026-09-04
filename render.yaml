@@ -21,7 +21,6 @@ services:
   - type: web
     name: gamevault-frontend
     env: static
-    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
