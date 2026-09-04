@@ -25,3 +25,6 @@ def create_app(config_object=Config):
     app.register_blueprint(dashboard_bp)
 
     return app
+
+
+app = create_app()
